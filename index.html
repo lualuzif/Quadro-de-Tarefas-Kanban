@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadro Kanban</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header class="cabecalho-principal">
+        <h1>Quadro de Tarefas Kanban</h1>
+    </header>
+
+    <main class="conteiner">
+        <!-- Formulário de Criação -->
+        <section class="secao-formulario">
+            <h2>Nova Tarefa</h2>
+            <form id="form-criar-tarefa" class="formulario-tarefa">
+                <div class="grupo-formulario">
+                    <label for="titulo">Título *</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Ex: Estudar JavaScript" required>
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" name="descricao" placeholder="Breve descrição...">
+                </div>
+
+                <div class="linha-formulario">
+                    <div class="grupo-formulario">
+                        <label for="prioridade">Prioridade</label>
+                        <select id="prioridade" name="prioridade">
+                            <option value="baixa">🟢 Baixa</option>
+                            <option value="media">🟡 Média</option>
+                            <option value="alta">🔴 Alta</option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="data-vencimento">Vencimento</label>
+                        <input type="date" id="data-vencimento" name="data-vencimento">
+                    </div>
+                </div>
+
+                <button type="submit" class="botao-primario">Adicionar Tarefa</button>
+            </form>
+        </section>
+
+        <!-- Quadro Kanban -->
+        <section class="quadro-kanban">
+            <!-- Coluna: A Fazer -->
+            <article class="coluna" id="coluna-a-fazer">
+                <header class="cabecalho-coluna">
+                    <h3>A Fazer</h3>
+                    <span class="contador" id="cont-a-fazer">0</span>
+                </header>
+                <div class="lista-tarefas" id="lista-a-fazer">
+                    <!-- Tarefas serão inseridas aqui via JS -->
+                </div>
+            </article>
+
+            <!-- Coluna: Em Progresso -->
+            <article class="coluna" id="coluna-em-progresso">
+                <header class="cabecalho-coluna">
+                    <h3>Em Progresso</h3>
+                    <span class="contador" id="cont-em-progresso">0</span>
+                </header>
+                <div class="lista-tarefas" id="lista-em-progresso">
+                    <!-- Tarefas serão inseridas aqui via JS -->
+                </div>
+            </article>
+
+            <!-- Coluna: Concluído -->
+            <article class="coluna" id="coluna-concluido">
+                <header class="cabecalho-coluna">
+                    <h3>Concluído</h3>
+                    <span class="contador" id="cont-concluido">0</span>
+                </header>
+                <div class="lista-tarefas" id="lista-concluido">
+                    <!-- Tarefas serão inseridas aqui via JS -->
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Modal de Edição -->
+    <div id="modal-edicao" class="modal oculto">
+        <div class="conteudo-modal">
+            <span class="fechar-modal">&times;</span>
+            <h2>Editar Tarefa</h2>
+            <form id="form-editar-tarefa" class="formulario-tarefa">
+                <input type="hidden" id="editar-id">
+                <div class="grupo-formulario">
+                    <label for="editar-titulo">Título *</label>
+                    <input type="text" id="editar-titulo" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="editar-descricao">Descrição</label>
+                    <input type="text" id="editar-descricao">
+                </div>
+                <div class="linha-formulario">
+                    <div class="grupo-formulario">
+                        <label for="editar-prioridade">Prioridade</label>
+                        <select id="editar-prioridade">
+                            <option value="baixa">🟢 Baixa</option>
+                            <option value="media">🟡 Média</option>
+                            <option value="alta">🔴 Alta</option>
+                        </select>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="editar-data-vencimento">Vencimento</label>
+                        <input type="date" id="editar-data-vencimento">
+                    </div>
+                </div>
+                <div class="acoes-modal">
+                    <button type="button" class="botao-secundario" id="cancelar-edicao">Cancelar</button>
+                    <button type="submit" class="botao-primario">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

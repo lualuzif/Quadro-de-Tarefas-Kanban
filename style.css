@@ -1,0 +1,423 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #fff5f8;
+    background-image: 
+        repeating-linear-gradient(
+            transparent,
+            transparent 24px,
+            #ffd4e5 24px,
+            #ffd4e5 25px
+        );
+    color: #2c2c2c;
+    line-height: 25px;
+}
+
+.conteiner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+.cabecalho-principal {
+    background-color: transparent;
+    padding: 25px 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cabecalho-principal h1 {
+    font-size: 28px;
+    line-height: 50px;
+    color: #2c2c2c;
+    font-weight: bold;
+}
+
+/* Formulário - SEM LINHAS (branco limpo) */
+.secao-formulario {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #ffb3d9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255, 182, 193, 0.15);
+}
+
+.secao-formulario h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 1px solid #ffe0f0;
+    padding-bottom: 10px;
+    line-height: normal;
+}
+
+.grupo-formulario {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ffc0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+    font-family: 'Courier New', monospace;
+    line-height: normal;
+}
+
+input:focus,
+select:focus {
+    border-color: #ff8dc7;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 141, 199, 0.1);
+}
+
+.linha-formulario {
+    display: flex;
+    gap: 15px;
+}
+
+.linha-formulario .grupo-formulario {
+    flex: 1;
+}
+
+/* Botões */
+.botao-primario {
+    background-color: #ff8dc7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    line-height: normal;
+    transition: all 0.2s ease;
+}
+
+.botao-primario:hover {
+    background-color: #ff6bb5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(255, 141, 199, 0.3);
+}
+
+.botao-secundario {
+    background-color: #ffe0f0;
+    color: #d63384;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    font-family: Arial, sans-serif;
+    line-height: normal;
+    transition: all 0.2s ease;
+}
+
+.botao-secundario:hover {
+    background-color: #ffc0e0;
+    transform: translateY(-1px);
+}
+
+/* Quadro Kanban - SEM LINHAS (só fundo neutro) */
+.quadro-kanban {
+    display: flex;
+    gap: 20px;
+}
+
+.coluna {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    min-height: 400px;
+    border: 1px solid #ffc0e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(255, 182, 193, 0.12);
+}
+
+.cabecalho-coluna {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffd4e5;
+}
+
+.cabecalho-coluna h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 25px;
+}
+
+.contador {
+    background-color: #ffe0f0;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    line-height: normal;
+    color: #d63384;
+    font-weight: normal;
+}
+
+.lista-tarefas {
+    min-height: 100px;
+}
+
+/* Card de Tarefa - ESTILO PAPEL COM LINHAS */
+.cartao-tarefa {
+    background-color: #fffafc;
+    background-image: 
+        repeating-linear-gradient(
+            transparent,
+            transparent 24px,
+            #ffd4e5 24px,
+            #ffd4e5 25px
+        );
+    padding: 15px;
+    padding-left: 45px;
+    margin-bottom: 12px;
+    border: 1px solid #ffc0e0;
+    border-left: 2px solid #ff8dc7;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 
+        0 2px 6px rgba(255, 182, 193, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease;
+}
+
+/* Linha vertical rosa (margem de caderno) */
+.cartao-tarefa::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(255, 182, 193, 0.5);
+}
+
+.cartao-tarefa:hover {
+    background-color: #fff5f9;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 12px rgba(255, 182, 193, 0.25),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Prioridades - bolinha na margem */
+.bolinha-prioridade {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    top: 1px;
+}
+
+.prioridade-baixa .bolinha-prioridade {
+    background-color: #28a745;
+}
+
+.prioridade-media .bolinha-prioridade {
+    background-color: #ffc107;
+}
+
+.prioridade-alta .bolinha-prioridade {
+    background-color: #dc3545;
+}
+
+/* Cabeçalho da tarefa */
+.cabecalho-tarefa {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    line-height: 25px;
+}
+
+.titulo-tarefa {
+    font-weight: bold;
+    font-size: 15px;
+    color: #2c2c2c;
+    line-height: 25px;
+}
+
+.descricao-tarefa {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 25px;
+}
+
+/* Rodapé da tarefa */
+.rodape-tarefa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ffb3d9;
+}
+
+.data-tarefa {
+    font-size: 12px;
+    color: #666;
+    line-height: normal;
+}
+
+/* Botões de ação no topo */
+.acoes-topo-tarefa {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 5px;
+}
+
+.botao-icone-acao {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ffc0e0;
+    cursor: pointer;
+    font-size: 16px;
+    color: #d63384;
+    padding: 5px 7px;
+    border-radius: 6px;
+    line-height: normal;
+    transition: all 0.2s ease;
+}
+
+.botao-icone-acao:hover {
+    background: #fff;
+    color: #c71585;
+    transform: scale(1.05);
+}
+
+.botao-excluir:hover {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+/* Botões de mover */
+.conteiner-botoes-mover {
+    display: flex;
+    gap: 5px;
+}
+
+.botao-mover {
+    background-color: #ff8dc7;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    line-height: normal;
+    transition: all 0.2s ease;
+}
+
+.botao-mover:hover {
+    background-color: #ff6bb5;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(255, 141, 199, 0.3);
+}
+
+.botao-mover-anterior {
+    background-color: transparent;
+    color: #d63384;
+    border: 1px solid #ffc0e0;
+}
+
+.botao-mover-anterior:hover {
+    background-color: #ffe0f0;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(255, 182, 193, 0.2);
+}
+
+/* Modal - BRANCO SEM LINHAS */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo-modal {
+    background-color: #fff;
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    border: 1px solid #ffb3d9;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(255, 182, 193, 0.25);
+}
+
+.conteudo-modal h2 {
+    line-height: normal;
+}
+
+.conteudo-modal label,
+.conteudo-modal input,
+.conteudo-modal select {
+    line-height: normal;
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #d63384;
+    line-height: normal;
+    transition: all 0.2s ease;
+}
+
+.fechar-modal:hover {
+    color: #c71585;
+    transform: scale(1.1);
+}
+
+.acoes-modal {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+    .quadro-kanban {
+        flex-direction: column;
+    }
+    
+    .linha-formulario {
+        flex-direction: column;
+        gap: 0;
+    }
+}
