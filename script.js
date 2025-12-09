@@ -6,7 +6,11 @@ window.onload = function() {
     carregarTarefas();
     mostrarTarefas();
 };
-
+const modal = document.getElementById('modal-edicao');
+    if(modal)
+    {
+        modal.style.display = 'none';
+    }    
 // Carregar tarefas salvas
 function carregarTarefas() {
     const salvo = localStorage.getItem('tarefas');
